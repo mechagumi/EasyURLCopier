@@ -1,0 +1,21 @@
+{
+    "manifest_version": 2,
+    "name": "Easy URL Copier",
+    "version": "1.0",
+    "description": "You can copy URL of the link.",
+    "icons": {
+	"128": "scissors.png"
+    },
+    "content_scripts": [
+	{
+	    "matches": [
+		"https://www.google.co.jp/*",
+		"https://www.google.com/*"
+	    ],
+	    "js": ["js/jquery-3.2.1.min.js", "js/contentscript.js"],
+	    "run_at": "document_end"
+	}
+    ],
+    "permissions": [
+    ]
+}
