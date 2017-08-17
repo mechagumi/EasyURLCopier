@@ -13,9 +13,13 @@
 		"https://www.google.com/*"
 	    ],
 	    "js": ["js/jquery-3.2.1.min.js", "js/contentscript.js"],
+	    "css": ["css/contentstyle.css"],
 	    "run_at": "document_end"
 	}
     ],
     "permissions": [
+    ],
+    "web_accessible_resources": [
+	"*.png"
     ]
 }

@@ -1,0 +1,10 @@
+.copy-button {
+    min-height: 30px;
+    padding: 5px 10px 5px 20px;
+    background: #fff url('chrome-extension://__MSG_@@extension_id__/scissors.png') left center no-repeat;
+    background-size: 16px 16px;
+}
+
+.copy-button:hover {
+    cursor: pointer;
+}

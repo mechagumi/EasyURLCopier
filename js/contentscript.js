@@ -17,16 +17,28 @@ function execCopy(string) {
     return result;
 }
 
+var targets = document.querySelectorAll('div.g .rc h3.r');
+
 // googleの検索結果に対してコピーボタンを配置します
-$(".rc h3.r").each(function() {
-    var targetBlk = this;
-    var elm = document.createElement("button");
-    elm.innerHTML = "Copy URL";
-    elm.style.marginLeft = "20px";
-    elm.addEventListener("click", function() {
-	var url = targetBlk.getElementsByTagName('a')[0].href;
+for (var i = 0; i < targets.length; i++)
+{
+    var targetHeading = targets[i];
+    var targetAnchor = targetHeading.getElementsByTagName('a')[0];
+
+    var block = document.createElement("div");
+
+    // URLコピーボタン(背景画像はcssにて設定)
+    var copyBtn = document.createElement("button");
+    copyBtn.className = "copy-button";
+//    copyBtn.src = chrome.extension.getURL('scissors.png');
+    copyBtn.innerHTML = "Copy URL";
+    copyBtn.addEventListener("click", function() {
+	var url = targetAnchor.href;
 	execCopy(url);
 	console.log("Copy \"" + url + "\" to ClipBord!");
     });
-    this.appendChild(elm);
-});
+    block.appendChild(copyBtn);
+
+    // Divブロックの追加
+    targetHeading.parentNode.insertBefore(block, targetHeading.nextSibling);
+}
