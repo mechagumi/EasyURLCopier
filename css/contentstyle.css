@@ -8,3 +8,13 @@
 .copy-button:hover {
     cursor: pointer;
 }
+
+#copy-URL-popup {
+    position: fixed;
+    bottom: 0px;
+    left: 0px;
+    padding: 1px;
+    z-index: 20000;
+    background: #000000;
+    color: #ffffff;
+}
